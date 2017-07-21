@@ -1,0 +1,27 @@
+#declare fields
+int array[10];
+int index = 0;
+
+void insert(int value);
+
+int main(void)
+{
+#populate the array
+  for (int i = 0; i < 10 + (10 / 2); i++)
+  {
+    insert(i);
+  }
+  return 0;
+}
+
+#goes through array circularly, does not have a chance to overflow
+void insert(int value)
+{
+  array[index] = value;
+  #would show you all the values in each slot changing, also show you how the index keeps going up then resets to the beginning
+  #cout << "Array element " << index << " has a value of " << value << "/n";
+  if (index == array.size() - 1)
+    index = 0;
+  else
+    index++;
+}
